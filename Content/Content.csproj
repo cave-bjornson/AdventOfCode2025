@@ -16,4 +16,8 @@
         <PackageReference Include="MonoGame.Tool.FFmpeg" Version="7.0.0.9"/>
         <PackageReference Include="MonoGame.Tool.FFprobe" Version="7.0.0.9"/>
     </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Assets\Fonts\" />
+      <Folder Include="Assets\Sprites\" />
+    </ItemGroup>
 </Project>

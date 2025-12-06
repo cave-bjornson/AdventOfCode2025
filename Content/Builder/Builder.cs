@@ -7,7 +7,9 @@
 /// For more details regarding the Content Builder, see the MonoGame documentation: <tbc.>
 /// </remarks>
 
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content.Pipeline;
+using Microsoft.Xna.Framework.Content.Pipeline.Processors;
 using MonoGame.Framework.Content.Pipeline.Builder;
 
 var contentCollectionArgs = new ContentBuilderParams()
@@ -42,6 +44,10 @@ public class Builder : ContentBuilder
 
         // By default, all content will be imported from the Assets folder using the default importer for their file type.
         // Please add any custom content collection rules here.
+
+        var soundEffectProcessor = new SoundEffectProcessor();
+        contentCollection.Include<WildcardRule>("Sounds/Effects/*.mp3",
+            contentImporter: new Mp3Importer(), contentProcessor: soundEffectProcessor);
 
         contentCollection.IncludeCopy("combination_lock.aseprite", "combination_lock.aseprite");
 
